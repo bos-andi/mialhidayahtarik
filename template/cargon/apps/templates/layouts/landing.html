@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block logo %}
+<link rel="shortcut icon" href="{{ config.ASSETS_ROOT }}/img/icon/ca-fav-3.svg">
+{% endblock %}
+
+{% block content %}
+
+{% include 'partials/preloader.html' %}
+
+{% include 'partials/header.html' %}
+
+{% include 'partials/offcanvas.html' %}
+
+{% block page_content %}{% endblock %}
+
+{% include 'partials/footer.html' %}
+
+<button id="topBtn3"><i class="fa-solid fa-arrow-up"></i></button>
+
+{% endblock content %}

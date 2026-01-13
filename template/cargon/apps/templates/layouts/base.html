@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- fav icon -->
+    {% block logo %}{% endblock %}
+
+    <!-- css file -->
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/all.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/slick.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/slick-theme.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/nice-select.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/typography.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/aos.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/style.css">
+    <link rel="stylesheet" href="{{ config.ASSETS_ROOT }}/css/responsive.css">
+
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body>
+
+    {% block content %}{% endblock content %}    
+    
+    <!-- js file -->
+    <script src="{{ config.ASSETS_ROOT }}/js/jquery-3.7.1.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/jquery.counterup.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/slick.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/jquery.nice-select.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/waypoints.min.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/aos.js"></script>
+    <script src="{{ config.ASSETS_ROOT }}/js/main.js"></script>
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+
+</html>
