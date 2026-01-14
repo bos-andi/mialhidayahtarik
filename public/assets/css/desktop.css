@@ -1,0 +1,196 @@
+/* ============================================
+   DESKTOP STYLES ONLY (min-width: 992px)
+   ============================================ */
+
+/* Sembunyikan bottom navigation di desktop */
+@media (min-width: 992px) {
+    .navfloat {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    body {
+        padding-bottom: 0 !important;
+    }
+    
+    .ca-breadcrumb-area {
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Desktop Navbar Styles */
+.header-area-3.header-area-4.stiky {
+    position: fixed !important;
+    top: 1.25rem !important;
+    left: 1.25rem !important;
+    right: 1.25rem !important;
+    width: calc(100% - 2.5rem) !important;
+    max-width: 100% !important;
+    transform: none !important;
+    z-index: 9999;
+    background: rgba(2, 16, 19, 0.4) !important;
+    backdrop-filter: blur(1.25rem) saturate(180%);
+    -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
+    border-radius: 1.5625rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-area-3.header-area-4.stiky .header-4 {
+    background: transparent !important;
+    border-radius: 1.5625rem;
+    padding: 0.9375rem 1.875rem;
+    top: 0 !important;
+    box-shadow: none;
+    position: relative;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+}
+
+/* Navbar saat scroll - lebih solid dengan warna hijau #01715d */
+.header-area-3.header-area-4.stiky.scroll-header {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    background: rgba(1, 113, 93, 0.85) !important;
+    backdrop-filter: blur(1.875rem) saturate(180%);
+    -webkit-backdrop-filter: blur(1.875rem) saturate(180%);
+    border: none;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0.25rem 1.25rem 0 rgba(1, 113, 93, 0.5);
+}
+
+.header-area-3.header-area-4.stiky.scroll-header .header-4 {
+    border-radius: 0 !important;
+    padding: 0.75rem 1.875rem;
+}
+
+/* Menu items styling untuk glassmorphism */
+.ca-main-menu-4 ul li a {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 0.625rem;
+}
+
+.ca-main-menu-4 ul li a:hover {
+    color: #16a34a !important;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-0.125rem);
+}
+
+/* Dropdown menu dengan glassmorphism */
+.ca-main-menu-4 ul li .sub-menu {
+    background: rgba(1, 113, 93, 0.95) !important;
+    backdrop-filter: blur(1.25rem) saturate(180%);
+    -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.5);
+    padding: 0.625rem 0;
+    margin-top: 0.625rem;
+}
+
+.ca-main-menu-4 ul li .sub-menu li a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.ca-main-menu-4 ul li .sub-menu li a:hover {
+    background: rgba(22, 163, 74, 0.2);
+    color: #16a34a !important;
+}
+
+/* Submenu Level 2 (Nested) */
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children {
+    position: relative;
+}
+
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children > a span {
+    margin-left: auto;
+    padding-left: 0.625rem;
+}
+
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-top: 0;
+    margin-left: 0.3125rem;
+    min-width: 12.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-0.625rem);
+    transition: all 0.3s ease;
+}
+
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.ca-main-menu-4 ul li .sub-menu li.menu-item-has-children .sub-menu li a {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive untuk tablet */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .header-area-3.header-area-4.stiky {
+        left: 0.625rem !important;
+        right: 0.625rem !important;
+        width: calc(100% - 1.25rem) !important;
+        top: 0.625rem !important;
+        border-radius: 1.25rem;
+    }
+    
+    .header-area-3.header-area-4.stiky .header-4 {
+        padding: 0.75rem 1.25rem;
+        border-radius: 1.25rem;
+    }
+}
+
+/* Padding untuk konten agar tidak tertutup navbar */
+.ca-breadcrumb-area {
+    padding-top: 7.5rem;
+}
+
+.ca-hero-4 {
+    padding-top: 0;
+}
+
+main {
+    position: relative;
+}
+
+/* Animasi smooth untuk navbar */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-1.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-area-3.header-area-4.stiky:not(.scroll-header) {
+    animation: slideDown 0.5s ease-out;
+}
+

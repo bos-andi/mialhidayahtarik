@@ -228,12 +228,57 @@
             width: 100% !important;
             max-width: 100% !important;
             border-radius: 0 !important;
-            background: rgba(1, 113, 93, 0.95) !important;
+            background: rgba(1, 113, 93, 0.85) !important;
             backdrop-filter: blur(1.875rem) saturate(180%);
             -webkit-backdrop-filter: blur(1.875rem) saturate(180%);
             border: none;
             border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 0.25rem 1.25rem 0 rgba(1, 113, 93, 0.5);
+        }
+        
+        /* Mobile: Navbar full width dan transparan dengan glassmorphism */
+        @media (max-width: 991px) {
+            .header-area-3.header-area-4.stiky {
+                width: 100% !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                border-radius: 0 !important;
+                background: rgba(2, 16, 19, 0.3) !important; /* Semi transparan saat di atas */
+                backdrop-filter: blur(1.25rem) saturate(180%);
+                -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
+                border: none;
+                border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .header-area-3.header-area-4.stiky .header-4 {
+                background: transparent !important;
+                border-radius: 0 !important;
+                padding: 0.75rem 1.25rem;
+            }
+            
+            /* Navbar saat scroll - lebih solid tapi tetap glassmorphism */
+            .header-area-3.header-area-4.stiky.scroll-header {
+                background: rgba(1, 113, 93, 0.85) !important; /* Lebih solid saat scroll */
+                backdrop-filter: blur(1.875rem) saturate(180%);
+                -webkit-backdrop-filter: blur(1.875rem) saturate(180%);
+                border-bottom: 0.125rem solid rgba(255, 255, 255, 0.15);
+                box-shadow: 0 0.25rem 1.25rem 0 rgba(1, 113, 93, 0.5);
+            }
+            
+            /* Logo dan teks kontras di atas hero */
+            .header-area-3.header-area-4.stiky .ca-logo-4 img,
+            .header-area-3.header-area-4.stiky .ca-logo-4 a {
+                filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
+            }
+            
+            .header-area-3.header-area-4.stiky .ca-main-menu-4 ul li a,
+            .header-area-3.header-area-4.stiky .ca-offcanvas-toogle {
+                color: rgba(255, 255, 255, 0.98) !important;
+                text-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+            }
         }
         
         .header-area-3.header-area-4.stiky.scroll-header .header-4 {
@@ -396,86 +441,127 @@
             transform: scale(1.05);
         }
         
-        /* Bottom Navigation Bar untuk Mobile */
-        .mobile-bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            background: rgba(2, 16, 19, 0.98);
-            backdrop-filter: blur(1.25rem) saturate(180%);
-            -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
-            border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.3);
-            z-index: 9998;
-            display: none;
-            padding: 0.5rem 0;
+        {{-- CSS untuk mobile bottom navigation dipindah ke partials/mobile-bottom-nav.blade.php --}}
+        
+        /* Search Offcanvas */
+        .search-offcanvas {
+            background: rgba(2, 16, 19, 0.95);
+            backdrop-filter: blur(1.5rem) saturate(180%);
+            -webkit-backdrop-filter: blur(1.5rem) saturate(180%);
         }
         
-        @media (max-width: 991px) {
-            .mobile-bottom-nav {
-                display: block;
-            }
+        .search-offcanvas .offcanvas-header {
+            border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
         }
         
-        .mobile-bottom-nav-list {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            min-height: 3.75rem;
-            max-height: 4.5rem;
+        .search-offcanvas .offcanvas-body {
+            padding: 2rem;
         }
         
-        .mobile-bottom-nav-list li {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .mobile-bottom-nav-list li a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 0.25rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 0.625rem;
+        .search-form {
             position: relative;
         }
         
-        .mobile-bottom-nav-list li a i {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
+        .search-form input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
         
-        .mobile-bottom-nav-list li a span {
-            font-size: 0.6875rem;
-            font-weight: 500;
+        .search-form input:focus {
+            outline: none;
+            border-color: #16a34a;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 0.25rem rgba(22, 163, 74, 0.1);
         }
         
-        .mobile-bottom-nav-list li a:hover,
-        .mobile-bottom-nav-list li a.active {
-            color: #16a34a;
-            background: rgba(22, 163, 74, 0.15);
-        }
-        
-        .mobile-bottom-nav-list li a:hover i,
-        .mobile-bottom-nav-list li a.active i {
-            transform: translateY(-0.125rem);
-            color: #16a34a;
+        .search-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
         
         /* Padding untuk konten agar tidak tertutup bottom nav */
         @media (max-width: 991px) {
-            body {
-                padding-bottom: 4.375rem;
+            .ca-breadcrumb-area {
+                padding-bottom: 5rem;
             }
+        }
+        
+        /* Offcanvas Menu - Transparan dengan Glassmorphism */
+        .ca-offcanvas {
+            background: rgba(2, 16, 19, 0.85) !important;
+            backdrop-filter: blur(1.5rem) saturate(180%);
+            -webkit-backdrop-filter: blur(1.5rem) saturate(180%);
+            border-right: 0.0625rem solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .ca-offcanvas-wrapper {
+            background: transparent;
+        }
+        
+        .ca-offcanvas-menu-3 ul li a {
+            color: rgba(255, 255, 255, 0.95) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .ca-offcanvas-menu-3 ul li a:hover {
+            color: #16a34a !important;
+            background: rgba(22, 163, 74, 0.1);
+            padding-left: 1.5rem;
+        }
+        
+        .ca-offcanvas-menu-3 ul li .sub-menu {
+            background: rgba(1, 113, 93, 0.3) !important;
+            backdrop-filter: blur(0.625rem);
+            border-left: 0.125rem solid rgba(22, 163, 74, 0.3);
+            margin-left: 1.25rem;
+            padding-left: 0.625rem;
+        }
+        
+        .ca-offcanvas-menu-3 ul li .sub-menu li a {
+            color: rgba(255, 255, 255, 0.85) !important;
+        }
+        
+        .ca-offcanvas-menu-3 ul li .sub-menu li a:hover {
+            color: #16a34a !important;
+        }
+        
+        .ca-offcanvas-close-toggle {
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(0.625rem);
+            border: 0.125rem solid rgba(255, 255, 255, 0.3) !important;
+            border-radius: 0.5rem;
+            color: #ffffff !important;
+            transition: all 0.3s ease;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .ca-offcanvas-close-toggle:hover {
+            background: rgba(22, 163, 74, 0.3) !important;
+            border-color: #16a34a !important;
+            color: #16a34a !important;
+            transform: scale(1.1);
+        }
+        
+        .ca-offcanvas-close-toggle i {
+            font-size: 1.25rem;
+            color: inherit;
+        }
+        
+        .ca-offcanvas-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(0.25rem);
         }
         
         /* Padding untuk konten agar tidak tertutup navbar */
@@ -508,16 +594,47 @@
         }
         
         @media (max-width: 991px) {
+            /* Mobile: Navbar full width dan transparan dengan glassmorphism saat di atas */
             .header-area-3.header-area-4.stiky {
                 width: 100% !important;
                 top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
                 border-radius: 0 !important;
-                background: rgba(1, 113, 93, 0.95) !important;
+                background: rgba(2, 16, 19, 0.3) !important; /* Semi transparan saat di atas */
+                backdrop-filter: blur(1.25rem) saturate(180%);
+                -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
+                border: none;
+                border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
             
             .header-area-3.header-area-4.stiky .header-4 {
                 border-radius: 0 !important;
-                padding: 0.75rem 0.9375rem;
+                padding: 0.75rem 1.25rem;
+                background: transparent !important;
+            }
+            
+            /* Navbar saat scroll - lebih solid tapi tetap glassmorphism */
+            .header-area-3.header-area-4.stiky.scroll-header {
+                background: rgba(1, 113, 93, 0.85) !important; /* Lebih solid saat scroll */
+                backdrop-filter: blur(1.875rem) saturate(180%);
+                -webkit-backdrop-filter: blur(1.875rem) saturate(180%);
+                border-bottom: 0.125rem solid rgba(255, 255, 255, 0.15);
+                box-shadow: 0 0.25rem 1.25rem 0 rgba(1, 113, 93, 0.5);
+            }
+            
+            /* Logo dan teks kontras di atas hero */
+            .header-area-3.header-area-4.stiky .ca-logo-4 img,
+            .header-area-3.header-area-4.stiky .ca-logo-4 a {
+                filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
+            }
+            
+            .header-area-3.header-area-4.stiky .ca-main-menu-4 ul li a,
+            .header-area-3.header-area-4.stiky .ca-offcanvas-toogle {
+                color: rgba(255, 255, 255, 0.98) !important;
+                text-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
             }
             
             .ca-breadcrumb-area {
@@ -713,7 +830,15 @@
                 <nav>
                     <ul>
                         <li><a href="{{ route('home') }}">Beranda</a></li>
-                        <li><a href="{{ route('profil') }}">Profil Madrasah</a></li>
+                        <li>
+                            <a href="{{ route('profil') }}">Tentang Kami <span><i class="fa-solid fa-angle-down"></i></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('profil') }}">Profil Madrasah</a></li>
+                                <li><a href="{{ route('visi-misi') }}">Visi & Misi</a></li>
+                                <li><a href="{{ route('sejarah') }}">Sejarah</a></li>
+                                <li><a href="{{ route('struktur-organisasi') }}">Struktur Organisasi</a></li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="{{ route('program-akademik') }}">Program <span><i class="fa-solid fa-angle-down"></i></span></a>
                             <ul class="sub-menu">
@@ -733,7 +858,7 @@
                         <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
                         <li><a href="{{ route('berita') }}">Berita</a></li>
                         <li><a href="{{ route('gallery') }}">Galeri</a></li>
-                        <li><a href="{{ route('home') }}#contact">Kontak</a></li>
+                        <li><a href="{{ route('kontak') }}">Kontak</a></li>
                     </ul>
                 </nav>
             </div>
@@ -884,47 +1009,21 @@
 
     <button id="topBtn4"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-bottom-nav d-lg-none">
-        <ul class="mobile-bottom-nav-list">
-            <li>
-                <a href="{{ route('home') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-home"></i>
-                    <span>Beranda</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('profil') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-info-circle"></i>
-                    <span>Tentang</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('program-akademik') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Program</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('berita') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span>Berita</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('gallery') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-images"></i>
-                    <span>Galeri</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('fasilitas') }}" class="bottom-nav-link">
-                    <i class="fa-solid fa-building"></i>
-                    <span>Fasilitas</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    {{-- Mobile Bottom Navigation - Include dari partial --}}
+    @include('partials.mobile-bottom-nav')
+    
+    <!-- Search Offcanvas -->
+    <div class="offcanvas offcanvas-top search-offcanvas" tabindex="-1" id="searchCanv" aria-labelledby="searchCanvLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="searchCanvLabel">Cari</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="search-form" action="{{ route('berita') }}" method="GET">
+                <input type="text" name="search" placeholder="Cari berita, artikel..." autofocus>
+            </form>
+        </div>
+    </div>
 
     <!-- js file -->
     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
@@ -956,6 +1055,64 @@
             } else {
                 $(".stiky").addClass("scroll-header");
             }
+            
+            // Function untuk close offcanvas
+            function closeOffcanvas() {
+                $(".ca-offcanvas").removeClass("ca-offcanvas-open");
+                $(".ca-offcanvas-overlay").removeClass("ca-offcanvas-overlay-open");
+                $("body").css("overflow", "");
+            }
+            
+            // Function untuk open offcanvas
+            function openOffcanvas() {
+                $(".ca-offcanvas").addClass("ca-offcanvas-open");
+                $(".ca-offcanvas-overlay").addClass("ca-offcanvas-overlay-open");
+                $("body").css("overflow", "hidden");
+            }
+            
+            // Fix untuk offcanvas toggle - pastikan event handler terpasang dengan prioritas tinggi
+            $(document).off('click', '.ca-offcanvas-toogle').on('click', '.ca-offcanvas-toogle', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if ($(".ca-offcanvas").hasClass("ca-offcanvas-open")) {
+                    closeOffcanvas();
+                } else {
+                    openOffcanvas();
+                }
+            });
+            
+            {{-- JavaScript untuk mobile bottom navigation dipindah ke partials/mobile-bottom-nav.blade.php --}}
+            
+            // Close offcanvas dengan tombol close - dengan prioritas tinggi
+            $(document).off('click', '.ca-offcanvas-close-toggle').on('click', '.ca-offcanvas-close-toggle', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeOffcanvas();
+            });
+            
+            // Close offcanvas dengan overlay - dengan prioritas tinggi
+            $(document).off('click', '.ca-offcanvas-overlay').on('click', '.ca-offcanvas-overlay', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeOffcanvas();
+            });
+            
+            // Close offcanvas saat klik link di dalam menu
+            $(document).on('click', '.ca-offcanvas-menu-3 a', function(e) {
+                // Jangan prevent default untuk link, biarkan navigasi berjalan
+                setTimeout(function() {
+                    closeOffcanvas();
+                }, 100);
+            });
+            
+            // Close offcanvas dengan ESC key
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape' && $(".ca-offcanvas").hasClass("ca-offcanvas-open")) {
+                    closeOffcanvas();
+                }
+            });
+            
+            {{-- Smooth scroll to top untuk mobile bottom nav dipindah ke partials/mobile-bottom-nav.blade.php --}}
             
             // Update active link on bottom nav
             function updateActiveNav() {
